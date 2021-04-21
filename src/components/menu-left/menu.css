@@ -1,0 +1,36 @@
+.music-logo{
+    padding-top: 30px;
+ }
+.title{
+   font-size: 12px;
+   font-weight: 300;
+   color: #888;
+   padding-top:30px ;
+   text-transform: capitalize;
+ }
+ul.list-group.g{
+    list-style: none;
+   
+}
+ul li{
+ 
+}
+a.list-group-item.active{
+    background-color: #fff;
+    display: block;
+    width: 90%;
+    border-radius: 10px;
+    color: #000;
+
+
+
+ }
+li a.list-group-item{ 
+    border: unset;
+    list-style: none;
+    display: inline-block;
+    background-color: transparent;
+    text-decoration:  none;
+    color:#666;
+
+}

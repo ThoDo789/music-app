@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+import Menu from "./components/menu-left/Menu";
+import { Col, Container, Row } from "reactstrap";
+import ShowContent from "./components/show-content/content";
+import NavSearch from "./components/navSearch/NavSearch";
+import { BrowserRouter as Router } from "react-router-dom";
+import ListRight from "./components/list-outside/ListRight";
+import Event from "./components/event/Event";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+  <Container className="App p-10" fluid={true}>
+      <Row className="mt-3 content-wrap">
+        <Menu />
+        <Col xs="8">
+          <Row className="bg-show">
+            <NavSearch />
+            <ShowContent />
+          </Row>
+        </Col>
+        <ListRight/>
+        <Event/>
+      </Row>
+     
+    </Container>
+    </Router>
+  
   );
 }
 

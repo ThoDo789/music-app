@@ -1,0 +1,96 @@
+.music-handle.col-12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: #ececec;
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 0 40px;
+    /* position: fixed;
+    bottom: 0;
+    transform: translateX(50%);
+    left: -50%; */
+
+}
+
+.music-left {
+    display: flex;
+    align-items: center;
+}
+.music-info {
+    /* flex-shrink: initial; */
+    padding: 20px;
+    line-height: 8px;
+}
+
+p.music-name {
+    font-size: 16px;
+    color: #000;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.music-artist {
+    color: #888;
+}
+
+img.music-img {
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 10px;
+}
+.event-music__handle {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 0 15px;
+    font-size: 30px;
+    color: blueviolet;
+}
+
+
+.music-volum__icon {
+    margin: 0 10px;
+    font-size: 25px;
+    color: #888;
+    position: relative;
+    top: -2px;
+}
+
+.music-volum {
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    height: 4px;
+   
+    outline: none;
+    overflow:hidden ;
+    /* padding: 10px 0; */
+
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    height: 10px;
+    width: 10px;
+    
+    border-radius: 50%;
+    box-shadow: -400px 0  0 400px blueviolet;
+    
+  
+}
+.music-range::-webkit-slider-thumb{
+
+}
+
+
+input[type="range"]::-webkit-range-track{
+    
+}
