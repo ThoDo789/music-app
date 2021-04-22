@@ -7,8 +7,24 @@ import NavSearch from "./components/navSearch/NavSearch";
 import { BrowserRouter as Router } from "react-router-dom";
 import ListRight from "./components/list-outside/ListRight";
 import Event from "./components/event/Event";
+import { useEffect } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getData } from "./components/redux/reducer/DataSlice";
 
 function App() {
+    const dispatch = useDispatch()
+  useEffect(async()=>{
+      async function fetchData() {
+        const baseUrl = "http://localhost:5000/songs";
+        const response = await axios(baseUrl);
+         await dispatch(getData(response.data.body));
+      
+      }
+      fetchData();   
+  },[])
+
+
   return (
     <Router>
   <Container className="App p-10" fluid={true}>
