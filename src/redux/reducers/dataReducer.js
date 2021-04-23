@@ -1,21 +1,11 @@
-import { GET_DATA, GET_LIKE, LISTEN_MUSIC } from "../const/constant";
+import { GET_DATA, GET_LIKE, IS_RANDOM, LISTEN_MUSIC, NEXT_SONG, PREV_SONG, SET_PLAY } from "../const/constant";
 
 const initialState = {
   data: [],
-  image: {
-    id: "bf9fb96c-fb01-4ef5-875e-03ff40284b30",
-    nameSong: "Incredible Cotton Bacon",
-    author: "Miss Christian Smith",
-    artist: "Wade Towne V",
-    imageSong: 1,
-    liked: false,
-    category: "Blues",
-    music: 1,
-    desc:
-      "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-    playlist: false,
-    years: 2020
-  }
+  image: {},
+  statePlay: false,
+  index:0,
+  isRandomIndex:false,
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -25,10 +15,16 @@ const dataReducer = (state = initialState, action) => {
         data: action.payload
       };
     case LISTEN_MUSIC:
+      const indexData = state.data.findIndex(value => value.id === action.payload.id);
+     console.log(indexData)
       return {
         ...state,
-        image: action.payload
+        image: action.payload,
+        statePlay: true,
+        index:indexData
+
       };
+
     case GET_LIKE:
       const index = state.data.findIndex(value => value.id === action.payload);
       console.log(index);
@@ -36,10 +32,40 @@ const dataReducer = (state = initialState, action) => {
       console.log(!state.data.liked);
       newData[index].liked = !state.data[index].liked;
 
+      console.log(state.statePlay);
       return {
         ...state,
         data: newData
       };
+
+    case SET_PLAY:
+      return {
+        ...state,
+        statePlay: action.payload,
+        
+      };
+
+      case PREV_SONG:
+      return {
+        ...state,
+        index: action.payload,
+        image:state.data[action.payload]
+      };  
+
+      case NEXT_SONG:
+        return {
+          ...state,
+          index: action.payload,
+          image:state.data[action.payload]
+        };  
+        case IS_RANDOM:
+          return {
+            ...state,
+            isRandomIndex:!state.isRandomIndex
+          };  
+
+
+
     default:
       return state;
   }
