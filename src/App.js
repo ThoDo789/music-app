@@ -10,13 +10,14 @@ import Event from "./components/event/Event";
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getData } from "./components/redux/reducer/DataSlice";
+import { getData } from "./redux/actions/action";
+
 
 function App() {
     const dispatch = useDispatch()
   useEffect(async()=>{
+    const baseUrl = "http://localhost:5000/songs";
       async function fetchData() {
-        const baseUrl = "http://localhost:5000/songs";
         const response = await axios(baseUrl);
          await dispatch(getData(response.data.body));
       
