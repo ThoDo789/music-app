@@ -1,12 +1,11 @@
+import { BiBarChart } from "@react-icons/all-files/bi/BiBarChart";
 import React from "react";
-import PropTypes from "prop-types";
-import { Col, ListGroup, ListGroupItem } from "reactstrap";
-import { Link,NavLink } from "react-router-dom";
-import {BiBarChart} from "@react-icons/all-files/bi/BiBarChart";
-import "./menu.css"
-Menu.propTypes = {};
+import { NavLink } from "react-router-dom";
+import { Col } from "reactstrap";
+import "./menu.css";
 
-function Menu(props) {
+
+function Menu() {
   return (
     <Col xs="2">
             <h5 className="music-logo">

@@ -1,9 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-MusicVideo.propTypes = {
-    
-};
 
 function MusicVideo(props) {
     return (

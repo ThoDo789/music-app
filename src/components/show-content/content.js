@@ -1,15 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ForYou from "./pages/ForYou/ForYou";
-import Library from "./pages/Library/Library";
-import MusicVideo from "./pages/MusicVideo/MusicVideo";
-import LikedSong from "./pages/LikedSong/LikedSong";
+import { Route, Switch } from "react-router-dom";
 import Album from "./pages/Albums/Album";
 import Artist from "./pages/Artists/Artist";
+import ForYou from "./pages/ForYou/ForYou";
 import Hiphop from "./pages/HipHop/Hiphop";
 import Jazz from "./pages/Jazz/Jazz";
-ShowContent.propTypes = {};
+import Library from "./pages/Library/Library";
+import LikedSong from "./pages/LikedSong/LikedSong";
+import MusicVideo from "./pages/MusicVideo/MusicVideo";
+
 const menus = [
   {
     path: "/",

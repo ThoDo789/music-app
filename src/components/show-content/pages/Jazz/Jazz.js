@@ -1,9 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-Jazz.propTypes = {
-    
-};
 
 function Jazz(props) {
     return (

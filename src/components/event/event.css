@@ -14,12 +14,11 @@
     justify-content: space-between;
     align-items: center;
 
-    /* position: fixed;
-    bottom: 0;
-    transform: translateX(50%);
-    left: -50%; */
-}
 
+}
+.event-music__handle.disable-event{
+    color: #888;
+}
 .music-left {
     display: flex;
     align-items: center;

@@ -12,6 +12,9 @@
     
    
 }
+.for-you__wrap:hover{
+    background-color: rgba(138, 43, 226,.2);
+}
 .foryou__wraper{
     max-height: 300px;
     overflow-y: auto;
@@ -36,17 +39,21 @@ border-radius: 10px;
 .for-you__left{
     display: flex;
     align-items: center;
+    cursor: pointer;
+
  }
 .for-you__details-index{
    
     font-size: 14px;
     font-weight: 700;
     color: #888;
+    cursor: default;
  }
 .for-you__details-like.active-like{
     color: #888;
     font-size: 20px;
     margin:  0 5px;
+    cursor: default;
 
 }
 .for-you__details-details{ 
@@ -68,6 +75,7 @@ border-radius: 10px;
 .for-you__right{ 
     display: flex;
     align-items: center;
+    cursor: pointer;
    
 }
 .for-you__menu{
@@ -76,7 +84,7 @@ border-radius: 10px;
  }
  .for-you__icon-menu{
     display: inline-block;
-    color:blueviolet;
+    color:rgb(138, 43, 226);
     margin-right: 5px;
  }
 .for-you__menu-list{ 

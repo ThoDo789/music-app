@@ -1,4 +1,4 @@
-import { GET_DATA, GET_LIKE, IS_RANDOM, LISTEN_MUSIC, NEXT_SONG, PREV_SONG, SET_PLAY } from "../const/constant";
+import { DURATION, GET_DATA, GET_LIKE, IS_LOOP, IS_RANDOM, LISTEN_MUSIC, NEXT_SONG, PREV_SONG, SET_PLAY } from "../const/constant";
 
 const initialState = {
   data: [],
@@ -6,6 +6,10 @@ const initialState = {
   statePlay: false,
   index:0,
   isRandomIndex:false,
+  isLoopSong:false,
+  indexLoopSong:null,
+  durationTime:null,
+
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -16,7 +20,7 @@ const dataReducer = (state = initialState, action) => {
       };
     case LISTEN_MUSIC:
       const indexData = state.data.findIndex(value => value.id === action.payload.id);
-     console.log(indexData)
+     
       return {
         ...state,
         image: action.payload,
@@ -27,12 +31,12 @@ const dataReducer = (state = initialState, action) => {
 
     case GET_LIKE:
       const index = state.data.findIndex(value => value.id === action.payload);
-      console.log(index);
+      
       const newData = [...state.data];
-      console.log(!state.data.liked);
+      
       newData[index].liked = !state.data[index].liked;
 
-      console.log(state.statePlay);
+    
       return {
         ...state,
         data: newData
@@ -63,8 +67,19 @@ const dataReducer = (state = initialState, action) => {
             ...state,
             isRandomIndex:!state.isRandomIndex
           };  
-
-
+          case IS_LOOP:
+            return {
+              ...state,
+              isLoopSong:!state.isLoopSong,
+              indexLoopSong:action.payload
+            };  
+      
+            case DURATION:
+              return {
+                ...state,
+                durationTime:action.payload
+                
+              }; 
 
     default:
       return state;

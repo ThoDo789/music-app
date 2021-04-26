@@ -1,26 +1,27 @@
+import { AiFillHeart } from "@react-icons/all-files/ai/AiFillHeart";
 import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
-import { AiFillHeart} from "@react-icons/all-files/ai/AiFillHeart";
-
 import { BsThreeDots } from "@react-icons/all-files/bs/BsThreeDots";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
-import { getImage, getLike } from "../../../../redux/actions/action";
+import { getImage } from "../../../../redux/actions/action";
 import "./foryou.css";
 
 function ForYou(props) {
   const dispatch = useDispatch();
-  const { data, image } = useSelector(state => state.data);
-  console.log(data);
+  const { data, image,index } = useSelector(state => state.data);
+  
+
+
+console.log(index)
   const handleListenMusic = key => {
+
     const image = data.find(value => value.id === key);
-    console.log(image)
+   
     dispatch(getImage(image));
   };
-  const handleLike = id => {
-    console.log(id);
-    dispatch(getLike(id));
-  };
+
+ 
 
   return (
     <Container>
@@ -32,17 +33,16 @@ function ForYou(props) {
           <Row>
             <Col xs="5">
               <div className="for-you__img">
-                {image ? (
+                {image && (
                   <img
                     src={`../../../asset/imgs/song${image.imageSong}.jpg`}
                     alt="avarta"
                   />
-                ) : (
-                  <img src="../../../asset/imgs/song1.jpg" alt="avarta" />
-                )}
+                ) }
               </div>
             </Col>
             <Col xs="7" className="foryou__wraper">
+         
               <Row>
                 {data.map((value, key) => (
                   <Col xs="12" className="for-you__wrap" key={key}>
@@ -50,10 +50,12 @@ function ForYou(props) {
                       <div className="for-you__details-index">{key + 1}</div>
                       <div
                         className="for-you__details-like active-like"
-                        onClick={() => handleLike(value.id)}
+                        // onClick={() => handleLike(value.id)}
                       >
+                        
+                        
                         {value.liked === true ? (
-                          <AiFillHeart className="icon-liked"/>
+                          <AiFillHeart className="icon-liked" />
                         ) : (
                           <AiOutlineHeart />
                         )}
@@ -77,7 +79,7 @@ function ForYou(props) {
                         </div>
                         <ul className="for-you__menu-list"></ul>
                       </div>
-                      <div className="for-you__time">2:13</div>
+                      {/* <div className="for-you__time">2:13</div> */}
                     </div>
                   </Col>
                 ))}
