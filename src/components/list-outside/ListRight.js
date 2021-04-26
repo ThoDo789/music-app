@@ -11,15 +11,25 @@ function ListRight(props) {
  
  const getTime= (index)=> {
     if(index<LikeSong.length){
-        const timeCurrent = new Date()
-       const time = new Date(LikeSong[index].UpdateAt)
-       const min = timeCurrent.getMinutes() - time.getMinutes()
+        const timeCurrent = new Date();
+       const time = new Date(LikeSong[index].UpdateAt);
+       const min = timeCurrent.getMinutes() - time.getMinutes();
+       const hours = timeCurrent.getHours() - time.getHours();
+       const dates = timeCurrent.getDate() - time.getDate();
+
        if(min<1){
            return `just now`
        }
-       else {
+       else if(min>1 && min<60){
         return `${min} minutes`
        }
+       else if(hours>0 && hours <24){
+           return `${hours} hours`
+       }
+       else if(dates>0 && dates< 30){
+           return `${dates} hours`
+        }
+       
    
    }
  }
@@ -47,7 +57,7 @@ function ListRight(props) {
                 {LikeSong.map((value, key) => (
                   <Col xs="12" className="for-you__wrap" key={key}>
                     <div className="for-you__left">
-                   <img class="music-img "src={`../../../asset/imgs/song${value.imageSong}.jpg`} alt="img"/>
+                   <img className="music-img "src={`../../../asset/imgs/song${value.imageSong}.jpg`} alt="img"/>
 
                       <div
                         className="for-you__details-details"

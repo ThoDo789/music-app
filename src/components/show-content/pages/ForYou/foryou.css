@@ -35,6 +35,8 @@ display: block;
 max-height: 300px;
 border-radius: 10px;
 
+transition: all .2s linear !important;
+
  }
 .for-you__left{
     display: flex;
@@ -105,9 +107,11 @@ margin-left: 30px;
 .list-song__img{ 
    
     display: block;
-    width:100%;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
+    max-height: 160px;
+
 
 }
 .icon-liked{

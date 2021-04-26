@@ -9,19 +9,14 @@ import "./foryou.css";
 
 function ForYou(props) {
   const dispatch = useDispatch();
-  const { data, image,index } = useSelector(state => state.data);
-  
+  const { data, image, index } = useSelector(state => state.data);
 
-
-console.log(index)
+  console.log(index);
   const handleListenMusic = key => {
-
     const image = data.find(value => value.id === key);
-   
+
     dispatch(getImage(image));
   };
-
- 
 
   return (
     <Container>
@@ -38,22 +33,16 @@ console.log(index)
                     src={`../../../asset/imgs/song${image.imageSong}.jpg`}
                     alt="avarta"
                   />
-                ) }
+                )}
               </div>
             </Col>
             <Col xs="7" className="foryou__wraper">
-         
               <Row>
                 {data.map((value, key) => (
                   <Col xs="12" className="for-you__wrap" key={key}>
                     <div className="for-you__left">
                       <div className="for-you__details-index">{key + 1}</div>
-                      <div
-                        className="for-you__details-like active-like"
-                        // onClick={() => handleLike(value.id)}
-                      >
-                        
-                        
+                      <div className="for-you__details-like active-like">
                         {value.liked === true ? (
                           <AiFillHeart className="icon-liked" />
                         ) : (
@@ -79,7 +68,6 @@ console.log(index)
                         </div>
                         <ul className="for-you__menu-list"></ul>
                       </div>
-                      {/* <div className="for-you__time">2:13</div> */}
                     </div>
                   </Col>
                 ))}
@@ -92,57 +80,20 @@ console.log(index)
         </Col>
         <Col xs="12">
           <div className="list-song">
-            <div className="item-list">
-              <img alt="list img" className="list-song__img" />
-              <div className="for-you__details-details">
-                <h5 className="for-you__details-name">thosod</h5>
-                <p className="for-you__details-artist">Maxsew</p>
-              </div>
-            </div>
-            <div className="item-list">
-              <img
-                src="http://placeimg.com/640/480"
-                alt="list img"
-                className="list-song__img"
-              />
-              <div className="for-you__details-details">
-                <h5 className="for-you__details-name">thosod</h5>
-                <p className="for-you__details-artist">Maxsew</p>
-              </div>
-            </div>
-            <div className="item-list">
-              <img
-                src="http://placeimg.com/640/480"
-                alt="list img"
-                className="list-song__img"
-              />
-              <div className="for-you__details-details">
-                <h5 className="for-you__details-name">thosod</h5>
-                <p className="for-you__details-artist">Maxsew</p>
-              </div>
-            </div>
-            <div className="item-list">
-              <img
-                src="http://placeimg.com/640/480"
-                alt="list img"
-                className="list-song__img"
-              />
-              <div className="for-you__details-details">
-                <h5 className="for-you__details-name">thosod</h5>
-                <p className="for-you__details-artist">Maxsew</p>
-              </div>
-            </div>
-            <div className="item-list">
-              <img
-                src="http://placeimg.com/640/480"
-                alt="list img"
-                className="list-song__img"
-              />
-              <div className="for-you__details-details">
-                <h5 className="for-you__details-name">thosod</h5>
-                <p className="for-you__details-artist">Maxsew</p>
-              </div>
-            </div>
+            {data.map((value,key) => {
+              if(key<=4){
+                return (
+                  <div className="item-list" key ={key}   onClick={() => handleListenMusic(value.id)}>
+                    <img alt="list img" className="list-song__img"  src={`../../../asset/imgs/song${value.imageSong}.jpg`} />
+                    <div className="for-you__details-details">
+                      <h5 className="for-you__details-name">{value.nameSong}</h5>
+                      <p className="for-you__details-artist">{value.artist}</p>
+                    </div>
+                  </div>
+                );
+              }
+              
+            })}
           </div>
         </Col>
       </Row>

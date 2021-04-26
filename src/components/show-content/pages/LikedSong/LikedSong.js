@@ -71,7 +71,7 @@ function LikedSong(props) {
                           </div>
                           <ul className="for-you__menu-list"></ul>
                         </div>
-                        {/* <div className="for-you__time">2:13</div> */}
+                       
                       </div>
                     </Col>
                   ))}
