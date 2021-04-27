@@ -9,6 +9,7 @@ const initialState = {
   isLoopSong:false,
   indexLoopSong:null,
   durationTime:null,
+ 
 
 };
 
@@ -25,7 +26,8 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         image: action.payload,
         statePlay: true,
-        index:indexData
+        index:indexData,
+      
 
       };
 

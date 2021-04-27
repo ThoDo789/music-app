@@ -16,17 +16,18 @@ function ListRight(props) {
        const min = timeCurrent.getMinutes() - time.getMinutes();
        const hours = timeCurrent.getHours() - time.getHours();
        const dates = timeCurrent.getDate() - time.getDate();
-
-       if(min<1){
-           return `just now`
+       const seconds = timeCurrent.getSeconds() - time.getSeconds();
+       console.log( time.getSeconds())
+       if(seconds<60){
+           return `Just now`
        }
-       else if(min>1 && min<60){
+       else if(min>1 && min<59 && seconds>59){
         return `${min} minutes`
        }
-       else if(hours>0 && hours <24){
+       else if(hours>0 && hours <23 && min>=59){
            return `${hours} hours`
        }
-       else if(dates>0 && dates< 30){
+       else if(dates>0 && dates< 30 && hours>23){
            return `${dates} hours`
         }
        

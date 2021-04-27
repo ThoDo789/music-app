@@ -5,7 +5,7 @@ import "./navsearch.css";
 
 function NavSearch(props) {
   return (
-    <Col xs="12">
+    <Col xs="12" className="nav-search">
       <Row>
         <Col xs="6" className="wrap-search-user">
           <Form className="form">

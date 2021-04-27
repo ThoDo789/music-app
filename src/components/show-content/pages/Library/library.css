@@ -1,5 +1,6 @@
 .foryou__wraper.cus{
- max-height: 50vh;
+ height: 50vh;
+ overflow: auto;
 }
 .img-library .for-you__img img{
     max-height: 50vh; 

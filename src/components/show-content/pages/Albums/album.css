@@ -1,0 +1,27 @@
+.masonic {
+    padding: 8px;
+    width: 100%;
+  }
+  .container1 {
+    max-height: 60vh;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    transition: transform 100ms ease-in-out;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+  }
+  
+  .img {
+    width: 100%;
+    display: block;
+   border-radius: 5px;
+   
+  }

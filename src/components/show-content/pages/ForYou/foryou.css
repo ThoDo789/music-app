@@ -1,119 +1,267 @@
-.for-you__title{ 
-        font-size: 18px;
-        font-weight: 700;
-        margin: 10px 0;
-        padding-top:20px;
+.for-you__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+    padding-top: 20px;
 }
 
-.for-you__wrap{
+.for-you__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-   
+    box-shadow: 1px 3px 3px rgb(0 0 0 / 25%);
+    margin-bottom: 10px;
+    background: rgb(0 0 0 / 4%);
+    border-radius: 10px;
 }
-.for-you__wrap:hover{
-    background-color: rgba(138, 43, 226,.2);
+.for-you__wrap:hover {
+    background-color: rgba(138, 43, 226, 0.2);
 }
-.foryou__wraper{
+.foryou__wraper {
+}
+.overflow-s {
     max-height: 300px;
     overflow-y: auto;
 }
-.for-you__img{
+.row.overflow-s::-webkit-scrollbar-track {
+    background-color: transparent;
+    outline: none;
+}
+.overflow-s::-webkit-scrollbar-thumb {
+    background-color: none;
 
+    outline: none;
+}
+
+.for-you__img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+.for-you__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: 300px;
+    border-radius: 10px;
 
- }
- .for-you__img img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-max-height: 300px;
-border-radius: 10px;
-
-transition: all .2s linear !important;
-
- }
-.for-you__left{
+    transition: all 0.2s linear !important;
+}
+.for-you__left {
     display: flex;
     align-items: center;
     cursor: pointer;
-
- }
-.for-you__details-index{
-   
+}
+.for-you__details-index {
     font-size: 14px;
     font-weight: 700;
     color: #888;
     cursor: default;
- }
-.for-you__details-like.active-like{
+}
+.for-you__details-like.active-like {
     color: #888;
     font-size: 20px;
-    margin:  0 5px;
+    margin: 0 5px;
     cursor: default;
-
 }
-.for-you__details-details{ 
+.for-you__details-details {
     margin: 12px;
 }
-.for-you__details-name{ 
+.for-you__details-name {
     font-size: 16px;
     font-weight: 600;
     margin: 0;
 }
-.for-you__details-artist{
-        color: #888;
-        font-size: 16px;
-        font-weight: 400;
-        margin: 0;
-
-
- }
-.for-you__right{ 
+.for-you__details-artist {
+    color: #888;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+.for-you__right {
     display: flex;
     align-items: center;
     cursor: pointer;
-   
 }
-.for-you__menu{
+.for-you__menu {
     position: relative;
-    
- }
- .for-you__icon-menu{
-    display: inline-block;
-    color:rgb(138, 43, 226);
-    margin-right: 5px;
- }
-.for-you__menu-list{ 
-    position:absolute;
 }
-.for-you__time{
-font-size: 14px;
-color: #888;
-margin-left: 30px;
+.for-you__icon-menu {
+    display: inline-block;
+    color: rgb(138, 43, 226);
+    margin-right: 5px;
+}
 
- }
- .list-song{ 
+.add-album {
+    padding: 1px 5px;
+    border-radius: 3px;
+    background-color: #f0d3f0;
+    position: absolute;
+    right: 30px;
+    width: max-content;
+    top: 0px;
+    display: none;
+}
+.for-you__icon-menu::before {
+    content: "";
+    position: absolute;
+    height: 34px;
+    width: 30px;
+
+    right: 19px;
+}
+.for-you__icon-menu:hover .add-album {
+    display: block;
+}
+.add-text {
+    font-size: 12px;
+    color: #000;
+}
+.for-you__menu-list {
+    position: absolute;
+}
+.for-you__time {
+    font-size: 14px;
+    color: #888;
+    margin-left: 30px;
+}
+.list-song {
     display: grid;
-    grid-template-columns: auto auto auto auto auto ;
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 15px;
-
- }
-.list-song__img{ 
-   
+}
+.list-song__img {
     display: block;
     width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
     max-height: 160px;
-
-
+    padding: 10px;
 }
-.icon-liked{
-    color: blueviolet ;
+.icon-liked {
+    color: blueviolet;
+}
+.music-line-wrap {
+    display: flex;
+    align-items: flex-end;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-right: 10px;
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+}
+.music-line {
+    width: 21px;
+    height: 300px;
+    margin: 1px;
+    transition: all 0.2s linear;
+}
+.line1 {
+    background-color: rgb(155, 141, 168);
+    animation: animate1 1.3s linear infinite;
+}
+.line2 {
+    background-color: rgb(155, 141, 168);
+    animation: animate2 1s linear infinite;
+}
+.line3 {
+    background-color: rgb(155, 141, 168);
+    animation: animate3 1.2s linear infinite;
+}
+.line4 {
+    background-color: rgb(155, 141, 168);
+    animation: animate4 0.8s linear infinite;
+}
+.line5 {
+    background-color: rgb(155, 141, 168);
+    animation: animate5 1.6s linear infinite;
+}
+.line6 {
+    background-color: rgb(155, 141, 168);
+    animation: animate3 1.4s linear infinite;
+}
+.line7 {
+    background-color: rgb(155, 141, 168);
+    animation: animate4 0.3s linear infinite;
+}
+.line8 {
+    background-color: rgb(155, 141, 168);
+    animation: animate5 0.7s linear infinite;
+}
+.line9 {
+    background-color: rgb(155, 141, 168);
+    animation: animate5 1.2s linear infinite;
+}
+
+@keyframes animate1 {
+    50% {
+        background-color: blueviolet;
+        height: 210px;
+    }
+}
+@keyframes animate2 {
+    50% {
+        background-color: blueviolet;
+        height: 250px;
+    }
+}
+@keyframes animate3 {
+    50% {
+        background-color: blueviolet;
+        height: 180px;
+    }
+}
+@keyframes animate4 {
+    50% {
+        background-color: blueviolet;
+        height: 190px;
+    }
+}
+@keyframes animate5 {
+    50% {
+        background-color: blueviolet;
+        height: 200px;
+    }
+}
+@keyframes animate6 {
+    50% {
+        background-color: blueviolet;
+        height: 280px;
+    }
+}
+@keyframes animate7 {
+    50% {
+        background-color: blueviolet;
+        height: 150px;
+    }
+}
+@keyframes animate8 {
+    50% {
+        background-color: blueviolet;
+        height: 130px;
+    }
+}
+@keyframes animate9 {
+    50% {
+        background-color: blueviolet;
+        height: 270px;
+    }
+}
+button.slick-arrow.slick-prev,
+button.slick-arrow.slick-next {
+    border-radius: 65%;
+    color: #000 !important;
+}
+button.slick-arrow.slick-prev::before,
+button.slick-arrow.slick-next::before {
+    color: blueviolet;
+    border-radius: unset;
+}
+.item-list:focus-visible {
+    outline: none !important;
 }

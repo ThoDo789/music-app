@@ -1,8 +1,8 @@
-.foryou__wraper.right{
+.foryou__wraper.right {
     max-height: 60vh;
     overflow-y: auto;
 }
-.like-time{
+.like-time {
     font-size: 10px;
     display: block;
 }
