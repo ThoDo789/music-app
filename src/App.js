@@ -34,9 +34,9 @@ function App() {
   return (
     <Router>
       <Container className="App p-10" fluid={true}>
-        <Row className="mt-3 content-wrap">
+        <Row className=" content-wrap">
           <Menu />
-          <Col xs="8">
+          <Col lg="8" sm="12" md="12">
             <Row className="bg-show">
               <NavSearch />
               <ShowContent />

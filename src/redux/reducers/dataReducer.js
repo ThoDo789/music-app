@@ -1,4 +1,4 @@
-import { DURATION, GET_DATA, GET_LIKE, IS_LOOP, IS_RANDOM, LISTEN_MUSIC, NEXT_SONG, PREV_SONG, SET_PLAY } from "../const/constant";
+import { DURATION, GET_DATA, GET_LIKE, IS_DISPLAY, IS_LOOP, IS_RANDOM, LISTEN_MUSIC, NEXT_SONG, PREV_SONG, SET_PLAY } from "../const/constant";
 
 const initialState = {
   data: [],
@@ -9,6 +9,7 @@ const initialState = {
   isLoopSong:false,
   indexLoopSong:null,
   durationTime:null,
+  isDisplay:false,
  
 
 };
@@ -82,6 +83,12 @@ const dataReducer = (state = initialState, action) => {
                 durationTime:action.payload
                 
               }; 
+              case IS_DISPLAY:
+                return {
+                  ...state,
+                 isDisplay:!state.isDisplay
+                  
+                }; 
 
     default:
       return state;

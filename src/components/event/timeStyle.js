@@ -1,6 +1,6 @@
 export  const styleRange = {
     track: {
-      backgroundColor: "#e3e3e3",
+      backgroundColor: "transparent",
       height: "4px"
     },
     active: {

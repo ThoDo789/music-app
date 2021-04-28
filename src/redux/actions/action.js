@@ -7,7 +7,8 @@ import {
   PREV_SONG,
   SET_PLAY,
   IS_LOOP,
-  DURATION
+  DURATION,
+  IS_DISPLAY
 } from "../const/constant";
 
 export const getData = data => {
@@ -59,6 +60,12 @@ export const isLoop = index => {
 export const getDuration = time => {
   return {
     type: DURATION,
+    payload:time
+   };
+};
+export const setDisplay = time => {
+  return {
+    type: IS_DISPLAY,
     payload:time
    };
 };

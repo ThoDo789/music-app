@@ -9,3 +9,4 @@ export const IS_RANDOM = "IS_RANDOM";
 export const IS_LOAD_FIRST = "IS_LOAD_FIRST";
 export const IS_LOOP = "IS_LOOP";
 export const DURATION = "DURATION";
+export const IS_DISPLAY = "IS_DISPLAY";

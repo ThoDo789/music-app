@@ -7,12 +7,22 @@
     padding :30px 30px;
 }
  .App.container-fluid{
-     padding:100px;
+     padding:50px;
      background-color: #cbcfe2;
+     /* max-height: 100vh;
+     overflow: hidden; */
  }  
  .content-wrap{
     padding: 15px 30px;
     background: #dfe1ec;
     border-radius: 10px;
+ }
+ @media screen and (max-width: 1023px) {
+     .bg-show{
+        padding :30px 0;
+     }
+    .App.container-fluid{
+        padding:0;
+    }
  }
  

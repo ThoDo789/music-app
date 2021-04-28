@@ -1,12 +1,12 @@
-import React from 'react';
+// import React from 'react';
 
-function ItemSong({ data: { id, name, src } }) {
-    return (
-        <div className={'card'}>
-        <img className={'img'} alt="kitty" src={src} />
-        <span children={name} />
-      </div>
-    );
-}
+// function ItemSong({ data: { id, name, src } }) {
+//     return (
+//         <div className={'card'}>
+//         <img className={'img'} alt="kitty" src={src} />
+//         <span children={name} />
+//       </div>
+//     );
+// }
 
-export default ItemSong;
+// export default ItemSong;

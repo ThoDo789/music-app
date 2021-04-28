@@ -15,6 +15,7 @@ function SongSlider(props) {
     const image = data.find(value => value.id === key);
 
     dispatch(getImage(image));
+    window.scroll(0,0)
   };
   var settings = {
     autoplaySpeed: 1000,
@@ -23,7 +24,33 @@ function SongSlider(props) {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 2,
-    cssEase: "linear"
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+         
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
     <Col xs="12">

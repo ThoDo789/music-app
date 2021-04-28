@@ -4,6 +4,7 @@ import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
 import { BsThreeDots } from "@react-icons/all-files/bs/BsThreeDots";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { Col, Container, Row } from "reactstrap";
 import { getImage } from "../../../../redux/actions/action";
 import "./library.css";
@@ -13,7 +14,7 @@ function Library(props) {
     const dispatch = useDispatch();
   const { data, image,index } = useSelector(state => state.data);
  
-
+const history = useHistory()
 
 console.log(index)
   const handleListenMusic = key => {
@@ -21,6 +22,9 @@ console.log(index)
     const image = data.find(value => value.id === key);
    
     dispatch(getImage(image));
+    window.scroll(0,0)
+
+    history.push("/")
   };
 
 
@@ -28,14 +32,14 @@ console.log(index)
     <Container>
       <Row>
         <Col xs="12">
-          <h3 className="for-you__title">Releases for you</h3>
+          <h3 className="for-you__title">Library
+          </h3>
         </Col>
-        <Col xs="12" className="foryou__wraper cus">
-          <Row>
+    
             
-            <Col xs="5" className="foryou__wraper cus">
+            <Col lg="5" sm="12" md="12" className="foryou__wraper cus .col-12-ipad-pro">
          
-              <Row>
+              
                 {data.map((value, key) => (
                   <Col xs="12" className="for-you__wrap" key={key}>
                     <div className="for-you__left">
@@ -76,10 +80,10 @@ console.log(index)
                   </Col>
                 ))}
 
-              </Row>
+        
             </Col>
             <Col xs="7" className="img-library">
-              <div className="for-you__img">
+              <div className="for-you__img lib">
                 {image && (
                   <img
                     src={`../../../asset/imgs/song${image.imageSong}.jpg`}
@@ -89,8 +93,7 @@ console.log(index)
               </div>
             </Col>
           </Row>
-        </Col>
-      </Row>
+     
     </Container>
   );
 }

@@ -4,59 +4,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { Col, Row } from "reactstrap";
 import { getImage } from "../../redux/actions/action";
 import "./listRight.css";
+import Moment from 'react-moment';
+import { useHistory } from "react-router";
+
 function ListRight(props) {
   const dispatch = useDispatch();
   const { data } = useSelector(state => state.data);
   const LikeSong = data.filter(song => song.liked === true);
- 
- const getTime= (index)=> {
-    if(index<LikeSong.length){
-        const timeCurrent = new Date();
-       const time = new Date(LikeSong[index].UpdateAt);
-       const min = timeCurrent.getMinutes() - time.getMinutes();
-       const hours = timeCurrent.getHours() - time.getHours();
-       const dates = timeCurrent.getDate() - time.getDate();
-       const seconds = timeCurrent.getSeconds() - time.getSeconds();
-       console.log( time.getSeconds())
-       if(seconds<60){
-           return `Just now`
-       }
-       else if(min>1 && min<59 && seconds>59){
-        return `${min} minutes`
-       }
-       else if(hours>0 && hours <23 && min>=59){
-           return `${hours} hours`
-       }
-       else if(dates>0 && dates< 30 && hours>23){
-           return `${dates} hours`
-        }
-       
-   
-   }
- }
- 
- 
+ const history = useHistory()
+
+
 
 
   const handleListenMusic = key => {
     const image = data.find(value => value.id === key);
 
     dispatch(getImage(image));
+    window.scroll(0,0)
+    history.push("/")
+
   };
  
 
   return (
-    <Col xs="2">
+    <Col lg="2" md="12" sm="12" className="col-12-ipad-pro">
       <Row>
         <Col xs="12">
           <h3 className="for-you__title">Favorite Songs Recently</h3>
         </Col>
-        <Col xs="12" className="foryou__wraper right">
-          <Row>
+       
             <Col xs="12" className="foryou__wraper right">
-              <Row>
+              {/* <Row> */}
                 {LikeSong.map((value, key) => (
-                  <Col xs="12" className="for-you__wrap" key={key}>
+                  <div  className="for-you__wrap col-12" key={key}>
                     <div className="for-you__left">
                    <img className="music-img "src={`../../../asset/imgs/song${value.imageSong}.jpg`} alt="img"/>
 
@@ -70,7 +50,7 @@ function ListRight(props) {
                         <p className="for-you__details-artist">
                          <span> {value.author}</span>
                          
-                         {value.UpdateAt &&<span className="like-time">{getTime(key)}</span>}
+                         {value.UpdateAt &&<span className="like-time"> <Moment fromNow>{new Date(value.UpdateAt)}</Moment></span>}
                         </p>
                       </div>
                     </div>
@@ -81,16 +61,15 @@ function ListRight(props) {
                         </div>
                         <ul className="for-you__menu-list"></ul>
                       </div>
-                      {/* <div className="for-you__time">2:13</div> */}
+                   
                     </div>
-                  </Col>
+                  </div>
                 ))}
-              </Row>
+             
             </Col>
           </Row>
         </Col>
-      </Row>
-    </Col>
+  
   );
 }
 

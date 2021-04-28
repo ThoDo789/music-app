@@ -4,11 +4,12 @@ import { AiOutlineHeart } from "@react-icons/all-files/ai/AiOutlineHeart";
 import { BsThreeDots } from "@react-icons/all-files/bs/BsThreeDots";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { Col, Container, Row } from "reactstrap";
 import { getImage } from "../../../../redux/actions/action";
 
 function LikedSong(props) {
-        
+       const history = useHistory() 
     const dispatch = useDispatch();
     const { data,index } = useSelector(state => state.data);
   const LikeSong = data.filter(song=>song.liked===true)
@@ -20,6 +21,9 @@ function LikedSong(props) {
       const image = data.find(value => value.id === key);
      
       dispatch(getImage(image));
+      window.scroll(0,0)
+
+      history.push("/")
     };
 
    
@@ -30,12 +34,11 @@ function LikedSong(props) {
           <Col xs="12">
             <h3 className="for-you__title">Favorite songs</h3>
           </Col>
-          <Col xs="12" className="foryou__wraper cus">
-            <Row>
+        
               
               <Col xs="12" className="foryou__wraper cus">
            
-                <Row>
+               
                   {LikeSong.map((value, key) => (
                     <Col xs="12" className="for-you__wrap" key={key}>
                       <div className="for-you__left">
@@ -75,11 +78,10 @@ function LikedSong(props) {
                       </div>
                     </Col>
                   ))}
-                </Row>
+                
               </Col>
             </Row>
-          </Col>
-        </Row>
+        
       </Container>
     );
 }

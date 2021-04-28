@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding:0;
@@ -8,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   behavior: scroll;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
