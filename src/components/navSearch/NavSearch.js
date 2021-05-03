@@ -1,10 +1,9 @@
 import { AiOutlineSearch } from "@react-icons/all-files/ai/AiOutlineSearch";
-import React, { useState } from "react";
-import { Col, Form, Input, Row } from "reactstrap";
-import "./navsearch.css";
-import { RiBarChartLine } from "@react-icons/all-files/ri/RiBarChartLine";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Col, Form, Input, Row } from "reactstrap";
 import { setDisplay } from "../../redux/actions/action";
+import "./navsearch.css";
 
 function NavSearch(props) {
   const dispatch = useDispatch();

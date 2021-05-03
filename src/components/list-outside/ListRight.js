@@ -33,7 +33,7 @@ function ListRight(props) {
           <h3 className="for-you__title">Favorite Songs Recently</h3>
         </Col>
        
-            <Col xs="12" className="foryou__wraper right">
+            <Col xs="12" className="foryou__wraper right col-12-ipad-pro">
               {/* <Row> */}
                 {LikeSong.map((value, key) => (
                   <div  className="for-you__wrap col-12" key={key}>
@@ -53,8 +53,7 @@ function ListRight(props) {
                          {value.UpdateAt &&<span className="like-time"> <Moment fromNow>{new Date(value.UpdateAt)}</Moment></span>}
                         </p>
                       </div>
-                    </div>
-                    <div className="for-you__right">
+                      <div className="for-you__right">
                       <div className="for-you__menu">
                         <div className="for-you__icon-menu">
                           <BsThreeDots />
@@ -63,6 +62,8 @@ function ListRight(props) {
                       </div>
                    
                     </div>
+                    </div>
+                   
                   </div>
                 ))}
              

@@ -12,7 +12,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import TimeSlider from "react-input-slider";
 import { useDispatch, useSelector } from "react-redux";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import {
   getDuration,
   getLike,
@@ -84,6 +84,7 @@ function Event(props) {
       dispatch(setPlay(!statePlay));
     }
     dispatch(prevSong(index));
+    window.scroll(0,0)
   };
 
   useEffect(() => {
@@ -115,6 +116,7 @@ function Event(props) {
     }
 
     dispatch(nextSong(index));
+    window.scroll(0,0)
   };
 
   const handleSliderVolum = ({ x }) => {
@@ -252,9 +254,7 @@ function Event(props) {
                 ></audio>
               </div>
 
-              <div className="music-right">
-                
-              </div>
+           
               <div className="like-action">
               <div className="music-volum">
                   <div className="music-volum__icon">

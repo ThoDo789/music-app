@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import useRandom from "../../../customs/customRandom";
 
 function Graph(props) {
   const { statePlay } = useSelector(state => state.data);
@@ -14,7 +13,7 @@ function Graph(props) {
 return(arr)
 
   };
-  const array =randomEl(9,40)
+  const array =randomEl(9,60)
   return (
     <div className={statePlay ? "music-line-wrap" : "d-none"}>
       {array.map((value,key)=>(<div className={`music-line line${value}`} key={key}></div>))}

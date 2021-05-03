@@ -1,12 +1,12 @@
-import { BiBarChart } from "@react-icons/all-files/bi/BiBarChart";
 import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
-
-import React, { useState } from "react";
+import { BiBarChart } from "@react-icons/all-files/bi/BiBarChart";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Col } from "reactstrap";
-import "./menu.css";
-import { useDispatch, useSelector } from "react-redux";
 import { setDisplay } from "../../redux/actions/action";
+import "./menu.css";
+
 
 
 function Menu() {

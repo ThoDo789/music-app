@@ -10,3 +10,7 @@ export const IS_LOAD_FIRST = "IS_LOAD_FIRST";
 export const IS_LOOP = "IS_LOOP";
 export const DURATION = "DURATION";
 export const IS_DISPLAY = "IS_DISPLAY";
+export const ADD_ALBUM = "ADD_ALBUM";
+
+export const GET_PlAYLISTS = "GET_PlAYLISTS";
+export const REMOVE_ALBUM = "REMOVE_ALBUM"

@@ -19,7 +19,7 @@ function ForYou(props) {
           <h3 className="for-you__title">Releases for you</h3>
         </Col>
 
-        <Col lg="5" sm="12" md="12">
+        <Col lg="5" sm="12" md="12" className="col-6-ipad-pro">
           <div className="for-you__img">
             {image && (
               <img

@@ -9,8 +9,7 @@
  .App.container-fluid{
      padding:50px;
      background-color: #cbcfe2;
-     /* max-height: 100vh;
-     overflow: hidden; */
+     overflow: hidden; 
  }  
  .content-wrap{
     padding: 15px 30px;

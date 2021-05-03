@@ -19,6 +19,10 @@ margin: 10px 0 0;
 .for-you__wrap:hover {
     background-color: rgba(138, 43, 226, 0.2);
 }
+.active-item{
+    background-color:rgba(138, 43, 226, 0.2);;
+    color: #fff;
+}
 .foryou__wraper {
 }
 .overflow-s {
@@ -165,7 +169,7 @@ display: block;
     margin-right: 10px;
     position: absolute;
     z-index: 2;
-   bottom:-40%;
+   bottom:-50%;
 
 }
 .music-line {
@@ -214,55 +218,55 @@ display: block;
 @keyframes animate1 {
     50% {
         background-color: blueviolet;
-        height: 210px;
+        height: 100px;
     }
 }
 @keyframes animate2 {
     50% {
         background-color: blueviolet;
-        height: 250px;
+        height: 150px;
     }
 }
 @keyframes animate3 {
     50% {
         background-color: blueviolet;
-        height: 180px;
+        height: 80px;
     }
 }
 @keyframes animate4 {
     50% {
         background-color: blueviolet;
-        height: 190px;
+        height: 90px;
     }
 }
 @keyframes animate5 {
     50% {
         background-color: blueviolet;
-        height: 200px;
+        height: 100px;
     }
 }
 @keyframes animate6 {
     50% {
         background-color: blueviolet;
-        height: 280px;
+        height: 180px;
     }
 }
 @keyframes animate7 {
     50% {
         background-color: blueviolet;
-        height: 150px;
+        height: 50px;
     }
 }
 @keyframes animate8 {
     50% {
         background-color: blueviolet;
-        height: 130px;
+        height: 30px;
     }
 }
 @keyframes animate9 {
     50% {
         background-color: blueviolet;
-        height: 270px;
+        height: 70px;
     }
 }
 button.slick-arrow.slick-prev,
@@ -291,4 +295,28 @@ button.slick-arrow.slick-next::before {
         max-height: unset;
         min-height: 300px;
     }
+    /* .music-line-wrap{
+        bottom: -40%;
+    } */
+}
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1949px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .col-12-ipad-pro.col-sm-12.col-md-12.col-lg-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .foryou__wraper.overflow-s.col-6-ipad-pro.col-sm-12.col-md-12.col-lg-7{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-6-ipad-pro.col-sm-12.col-md-12.col-lg-5{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .music-line-wrap{
+        bottom: -50%;
+    }
+
 }

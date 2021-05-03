@@ -10,11 +10,14 @@ const initialState = {
   indexLoopSong:null,
   durationTime:null,
   isDisplay:false,
+  idLike:[]
  
 
 };
 
 const dataReducer = (state = initialState, action) => {
+  let newData = [...state.data];
+
   switch (action.type) {
     case GET_DATA:
       return {
@@ -34,15 +37,16 @@ const dataReducer = (state = initialState, action) => {
 
     case GET_LIKE:
       const index = state.data.findIndex(value => value.id === action.payload);
-      
-      const newData = [...state.data];
+      const indexId = state.data.find(value => value.id === action.payload);
+     console.log(indexId)
       
       newData[index].liked = !state.data[index].liked;
 
     
       return {
         ...state,
-        data: newData
+        data: newData,
+        idLike:indexId
       };
 
     case SET_PLAY:
@@ -89,6 +93,7 @@ const dataReducer = (state = initialState, action) => {
                  isDisplay:!state.isDisplay
                   
                 }; 
+              
 
     default:
       return state;

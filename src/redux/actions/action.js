@@ -8,7 +8,11 @@ import {
   SET_PLAY,
   IS_LOOP,
   DURATION,
-  IS_DISPLAY
+  IS_DISPLAY,
+  ADD_ALBUM,
+  GET_PlAYLISTS,
+  REMOVE_ALBUM,
+ 
 } from "../const/constant";
 
 export const getData = data => {
@@ -69,3 +73,24 @@ export const setDisplay = time => {
     payload:time
    };
 };
+export const getPlaylist = item => {
+  console.log(item, 123)
+  return {
+    type: GET_PlAYLISTS,
+    payload:item
+   };
+};
+export const removeItem = item => {
+  console.log(item, 123)
+  return {
+    type: REMOVE_ALBUM,
+    payload:item
+   };
+};
+export const addAlbum = item => {
+  return {
+    type: ADD_ALBUM,
+    payload:item
+   };
+};
+
